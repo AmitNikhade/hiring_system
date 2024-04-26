@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            /*display: flex;*/
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        #drop-area {
+            border: 2px dashed #3498db;
+            padding: 20px;
+            text-align: center;
+            transition: border 0.3s ease;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .instructions {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        #file-input {
+            display: none;
+        }
+
+        #submit-btn {
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #submit-btn:hover {
+            background-color: #2980b9;
+        }
+
+        #loading-container {
+            text-align: center;
+        }
+
+        #loading-spinner {
+            display: none;
+            border: 6px solid rgba(0, 0, 0, 0.1);
+            border-top: 6px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 0.8s linear infinite;
+            margin-top: 10px;
+        }
+
+        #response-container {
+            display: none;
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+            max-height: 300px;
+            overflow: auto;
+        }
+
+        .response-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+
+        .response-content {
+            color: #555;
+            overflow: hidden;
+            max-height: 100px;
+            transition: max-height 0.3s ease;
+        }
+
+        #read-more-btn {
+            display: none;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        #read-more-btn:hover {
+            background-color: #2980b9;
+        }
+
+        .expanded .response-content {
+            max-height: none;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .drag-over {
+            border-color: #4CAF50;
+        }
+    </style>
+    <title>Modern PDF Upload</title>
+</head>
+
+<body>
+    <div id="drop-area">
+        <div class="instructions">Drag and drop PDF files here or click to select</div>
+        <label for="file-input" id="file-label">Choose Files</label>
+        <input type="file" id="file-input" multiple>
+        <button id="submit-btn">
+            Submit
+        </button>
+    </div>
+
+    <div id="loading-container">
+        <span id="loading-spinner"></span>
+    </div>
+
+    <div id="response-container">
+        <div class="response-title">Upload Report</div>
+        <div class="response-content" id="response-content"></div>
+        <button id="read-more-btn">Read More</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dropArea = document.getElementById('drop-area');
+            const fileInput = document.getElementById('file-input');
+            const submitBtn = document.getElementById('submit-btn');
+            const fileLabel = document.getElementById('file-label');
+            const loadingSpinner = document.getElementById('loading-spinner');
+            const responseContainer = document.getElementById('response-container');
+            const responseContent = document.getElementById('response-content');
+            const readMoreBtn = document.getElementById('read-more-btn');
+
+            dropArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                dropArea.classList.add('drag-over');
+            });
+
+            dropArea.addEventListener('dragleave', () => {
+                dropArea.classList.remove('drag-over');
+            });
+
+            dropArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                dropArea.classList.remove('drag-over');
+                const files = e.dataTransfer.files;
+                handleFiles(files);
+            });
+
+            fileInput.addEventListener('change', () => {
+                const files = fileInput.files;
+                handleFiles(files);
+            });
+
+            submitBtn.addEventListener('click', () => {
+                const files = fileInput.files;
+                if (files.length > 0) {
+                    loadingSpinner.style.display = 'inline-block';
+                    responseContainer.style.display = 'none';
+                    submitFiles(files);
+                } else {
+                    alert('Please select PDF files to upload.');
+                }
+            });
+
+            readMoreBtn.addEventListener('click', () => {
+                responseContainer.classList.toggle('expanded');
+                readMoreBtn.innerText = responseContainer.classList.contains('expanded') ? 'Read Less' : 'Read More';
+            });
+
+            function handleFiles(files) {
+                // Display file names or perform other actions if needed
+                console.log("Selected files:", files);
+                fileLabel.innerHTML = `${files.length} File(s) Selected`;
+            }
+
+            function submitFiles(files) {
+                const url = 'http://127.0.0.1:5000/upload';
+                const formData = new FormData();
+                for (let i = 0; i < files.length; i++) {
+                    const fileName = `file${i + 1}.pdf`;
+                    formData.append('files[]', files[i], fileName);
+                }
+                fetch(url, {
+                        method: 'POST',
+                        mode: 'cors',
+                        body: formData
+                    })
+                    .then(response => response.text())
+                    .then(data => {
+                        console.log(data);
+                        loadingSpinner.style.display = 'none';
+                        responseContent.innerHTML = parseResponseData(data);
+                        responseContainer.style.display = 'block';
+                        readMoreBtn.style.display = data.length > 100 ? 'inline-block' : 'none';
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('Error uploading files. Please try again.');
+                        loadingSpinner.style.display = 'none';
+                    });
+            }
+
+            function parseResponseData(data) {
+                // Convert plain text to HTML and make titles bold
+                const lines = data.split('\n');
+                const formattedLines = lines.map(line => line.startsWith('#') ? `<strong>${line.substring(1)}</strong>` : line);
+                return formattedLines.join('<br>');
+            }
+        });
+    </script>
+</body>
+
+</html>

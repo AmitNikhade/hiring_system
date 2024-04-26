@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Emotion Analysis</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/opencv.js/4.5.2/opencv.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/deepface/dist/deepface.min.js"></script>
+</head>
+<body>
+    <h1>Real-time Emotion Analysis</h1>
+    <canvas id="videoOutput" width="640" height="480"></canvas>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const videoElement = document.createElement('video');
+            const canvasElement = document.getElementById('videoOutput');
+            const ctx = canvasElement.getContext('2d');
+
+            videoElement.width = canvasElement.width;
+            videoElement.height = canvasElement.height;
+
+            const faceCascadeFile = 'haarcascade_frontalface_default.xml';
+            const faceCascade = new cv.CascadeClassifier();
+            const emotionLabels = ["angry", "disgust", "fear", "happy", "sad", "surprise", "neutral"];
+
+            faceCascade.load(faceCascadeFile);
+
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(stream => {
+                    videoElement.srcObject = stream;
+                    videoElement.play();
+                })
+                .catch(err => console.error(err));
+
+            const processVideo = () => {
+                ctx.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
+                const frame = cv.imread(canvasElement);
+
+                const faces = new cv.RectVector();
+                const faceSize = new cv.Size(0, 0);
+                faceCascade.detectMultiScale(frame, faces, 1.1, 3, 0, faceSize, faceSize);
+
+                for (let i = 0; i < faces.size(); ++i) {
+                    const face = faces.get(i);
+                    const faceRect = new cv.Rect(face.x, face.y, face.width, face.height);
+                    const faceMat = frame.roi(faceRect);
+
+                    deepface.analyze(faceMat, { actions: ['emotion'] }).then(result => {
+                        const emotions = result[0].emotion;
+                        const dominantEmotion = Object.keys(emotions).reduce((a, b) => emotions[a] > emotions[b] ? a : b);
+                        console.log("Dominant Emotion:", dominantEmotion);
+                        // You can perform further actions based on the detected emotion here
+                    });
+
+                    faceMat.delete();
+                }
+
+                faces.delete();
+                frame.delete();
+
+                requestAnimationFrame(processVideo);
+            };
+
+            processVideo();
+        });
+    </script>
+</body>
+</html>

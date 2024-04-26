@@ -1,0 +1,1148 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Influence Dynamics Assessment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f3f3f3;
+      color: #333;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .question h3 {
+      margin-bottom: 10px;
+    }
+    .options {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .option {
+      margin: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .result {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Influence Dynamics Assessment</h1>
+    <p>The Influence Dynamics Assessment (IDA) evaluates your behavioral tendencies in interpersonal interactions.</p>
+    
+    <div class="question">
+      <h3>Question 1:</h3>
+      <p>In a group setting, how do you handle disagreements among members?</p>
+      <div class="options">
+        <div class="option"><button>a) Assertively express your viewpoint and persuade others to agree</button></div>
+        <div class="option"><button>b) Listen to all perspectives and work towards finding a compromise</button></div>
+        <div class="option"><button>c) Avoid conflict and maintain neutrality</button></div>
+        <div class="option"><button>d) Manipulate the situation to ensure your preferred outcome</button></div>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>Question 2:</h3>
+      <p>Have you ever utilized flattery or compliments to influence someone's decision?</p>
+      <div class="options">
+        <div class="option"><button>a) Rarely, if ever</button></div>
+        <div class="option"><button>b) Occasionally, but only as genuine appreciation</button></div>
+        <div class="option"><button>c) Sometimes, strategically to gain favor</button></div>
+        <div class="option"><button>d) Frequently, as a deliberate tactic to manipulate</button></div>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>Question 3:</h3>
+      <p>How comfortable are you with withholding information to maintain an advantage in a negotiation?</p>
+      <div class="options">
+        <div class="option"><button>a) Extremely uncomfortable, I prefer transparency</button></div>
+        <div class="option"><button>b) Somewhat uncomfortable, but I recognize its utility</button></div>
+        <div class="option"><button>c) Neutral, I adapt to the situation as needed</button></div>
+        <div class="option"><button>d) Somewhat comfortable, if it serves my interests</button></div>
+        <div class="option"><button>e) Very comfortable, I see it as a strategic necessity</button></div>
+      </div>
+    </div>
+
+    <div class="question">
+      <h3>Question 4:</h3>
+      <p>When faced with a challenging task, how do you motivate others to contribute?</p>
+      <div class="options">
+        <div class="option"><button>a) Lead by example, demonstrating dedication and hard work</button></div>
+        <div class="option"><button>b) Offer rewards or incentives for successful completion</button></div>
+        <div class="option"><button>c) Appeal to their sense of duty or obligation</button></div>
+        <div class="option"><button>d) Manipulate their emotions to evoke guilt or obligation</button></div>
+      </div>
+    </div>
+
+    <div class="question">
+        <h3>Question 5:</h3>
+        <p>Do you believe it's important to maintain a degree of unpredictability in your interactions with others?</p>
+        <div class="options">
+          <div class="option"><button>a) No, consistency and reliability are key</button></div>
+          <div class="option"><button>b) Occasionally, to keep things interesting</button></div>
+          <div class="option"><button>c) Yes, it keeps others on their toes and adds intrigue</button></div>
+          <div class="option"><button>d) Absolutely, unpredictability is a powerful tool for manipulation</button></div>
+        </div>
+      </div>
+  
+      <div class="question">
+        <h3>Question 6:</h3>
+        <p>In a negotiation, how do you handle concessions?</p>
+        <div class="options">
+          <div class="option"><button>a) Make concessions only if absolutely necessary</button></div>
+          <div class="option"><button>b) Use concessions strategically to build rapport and trust</button></div>
+          <div class="option"><button>c) Offer concessions readily to maintain harmony</button></div>
+          <div class="option"><button>d) Manipulate the situation to extract maximum concessions from the other party</button></div>
+        </div>
+      </div>
+  
+      <div class="question">
+        <h3>Question 7:</h3>
+        <p>Have you ever used silence as a tactic to manipulate a situation?</p>
+        <div class="options">
+          <div class="option"><button>a) No, silence is not a tool I employ</button></div>
+          <div class="option"><button>b) Rarely, if ever</button></div>
+          <div class="option"><button>c) Occasionally, to gauge reactions or exert control</button></div>
+          <div class="option"><button>d) Frequently, to unsettle others or assert dominance</button></div>
+        </div>
+      </div>
+  
+      <div class="question">
+        <h3>Question 8:</h3>
+        <p>When faced with criticism, how do you typically respond?</p>
+        <div class="options">
+          <div class="option"><button>a) Accept it gracefully and strive for self-improvement</button></div>
+          <div class="option"><button>b) Defend yourself and deflect blame onto others</button></div>
+          <div class="option"><button>c) Manipulate the situation to discredit the critic or shift focus</button></div>
+          <div class="option"><button>d) Ignore the criticism altogether and continue forward</button></div>
+        </div>
+      </div>
+  
+      
+      <div class="question">
+        <h3>Question 9:</h3>
+        <p>How do you approach building rapport with new acquaintances?</p>
+        <div class="options">
+          <div class="option"><button>a) Genuine interest and empathy towards their experiences and perspectives</button></div>
+          <div class="option"><button>b) Strategic flattery or mirroring to establish common ground</button></div>
+          <div class="option"><button>c) Manipulation of their emotions or vulnerabilities to gain trust</button></div>
+          <div class="option"><button>d) Focus solely on showcasing your own achievements and qualities</button></div>
+        </div>
+      </div>
+  
+      <div class="question">
+        <h3>Question 10:</h3>
+        <p>Do you believe it's acceptable to exploit loopholes or gray areas in rules or agreements?</p>
+        <div class="options">
+          <div class="option"><button>a) No, integrity and honesty are paramount</button></div>
+          <div class="option"><button>b) Only if doing so benefits all parties involved</button></div>
+          <div class="option"><button>c) Yes, if it serves my interests without causing harm</button></div>
+          <div class="option"><button>d) Absolutely, rules are meant to be manipulated for personal gain</button></div>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>Question 11:</h3>
+        <p>How important is it for you to take charge in group settings?</p>
+        <div class="options">
+          <div class="option"><button>a) Not important at all</button></div>
+          <div class="option"><button>b) Somewhat important</button></div>
+          <div class="option"><button>c) Moderately important</button></div>
+          <div class="option"><button>d) Quite important</button></div>
+          <div class="option"><button>e) Extremely important</button></div>
+        </div>
+      </div>
+  
+      <div class="question">
+        <h3>Question 12:</h3>
+        <p>Have you ever found yourself influencing others' opinions?</p>
+        <div class="options">
+          <div class="option"><button>a) Rarely, if ever</button></div>
+          <div class="option"><button>b) Occasionally, but only unintentionally</button></div>
+          <div class="option"><button>c) Sometimes, intentionally or unintentionally</button></div>
+          <div class="option"><button>d) Frequently, intentionally or unintentionally</button></div>
+        </div>
+      </div>
+  
+      <div class="question">
+        <h3>Question 13:</h3>
+        <p>How comfortable are you with presenting information that may sway others' opinions?</p>
+        <div class="options">
+          <div class="option"><button>a) Very uncomfortable</button></div>
+          <div class="option"><button>b) Somewhat uncomfortable</button></div>
+          <div class="option"><button>c) Neutral</button></div>
+          <div class="option"><button>d) Somewhat comfortable</button></div>
+          <div class="option"><button>e) Very comfortable</button></div>
+        </div>
+      </div>
+  
+      <div class="question">
+        <h3>Question 14:</h3>
+        <p>What trait do you believe is most important for success?</p>
+        <div class="options">
+          <div class="option"><button>a) Kindness</button></div>
+          <div class="option"><button>b) Assertiveness</button></div>
+          <div class="option"><button>c) Intelligence</button></div>
+          <div class="option"><button>d) Charisma</button></div>
+          <div class="option"><button>e) Adaptability</button></div>
+        </div>
+      </div>
+  
+      <div class="question">
+        <h3>Question 15:</h3>
+        <p>When leading a team, do you prefer members who:</p>
+        <div class="options">
+          <div class="option"><button>a) Follow your instructions without question</button></div>
+          <div class="option"><button>b) Challenge your ideas to stimulate discussion</button></div>
+          <div class="option"><button>c) A mix of both</button></div>
+          <div class="option"><button>d) Have no preference</button></div>
+          <div class="option"><button>e) It depends on the situation</button></div>
+        </div>
+      </div>
+  
+      <div class="question">
+        <h3>Question 16:</h3>
+        <p>Which do you value more:</p>
+        <div class="options">
+          <div class="option"><button>a) Admiration from others</button></div>
+          <div class="option"><button>b) Respect from others</button></div>
+          <div class="option"><button>c) Both equally</button></div>
+          <div class="option"><button>d) Neither, as long as I achieve my goals</button></div>
+        </div>
+      </div>
+  
+      <div class="question">
+        <h3>Question 17:</h3>
+        <p>Have you ever deliberately cultivated an air of mystery about yourself to intrigue others?</p>
+        <div class="options">
+          <div class="option"><button>a) No, never</button></div>
+          <div class="option"><button>b) Rarely, if ever</button></div>
+          <div class="option"><button>c) Occasionally</button></div>
+          <div class="option"><button>d) Often</button></div>
+          <div class="option"><button>e) All the time</button></div>
+        </div>
+      </div>
+  
+      <div class="question">
+        <h3>Question 18:</h3>
+        <p>When resolving conflicts, do you:</p>
+        <div class="options">
+          <div class="option"><button>a) Address them head-on and seek resolution</button></div>
+          <div class="option"><button>b) Resolve them indirectly, through mediation or negotiation</button></div>
+          <div class="option"><button>c) Avoid conflict altogether</button></div>
+          <div class="option"><button>d) Wait for conflicts to resolve themselves</button></div>
+        </div>
+      </div>
+  
+      <div class="question">
+        <h3>Question 19:</h3>
+        <p>Do you prefer to:</p>
+        <div class="options">
+          <div class="option"><button>a) Reveal your talents gradually, surprising others over time</button></div>
+          <div class="option"><button>b) Showcase your talents from the outset, establishing your capabilities early on</button></div>
+          <div class="option"><button>c) Adapt your approach based on the situation</button></div>
+          <div class="option"><button>d) It doesn't matter to me</button></div>
+        </div>
+      </div>
+  
+      <div class="question">
+        <h3>Question 20:</h3>
+        <p>Is it important to you to:</p>
+        <div class="options">
+          <div class="option"><button>a) Allow others to take the spotlight while you work behind the scenes</button></div>
+          <div class="option"><button>b) Always be in the spotlight, showcasing your contributions openly</button></div>
+          <div class="option"><button>c) It depends on the circumstances</button></div>
+          <div class="option"><button>d) I don't consider it a priority</button></div>
+        </div>
+      </div>
+    <!-- Repeat the above structure for all questions -->
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Influence Dynamics Assessment</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f3f3f3;
+          color: #333;
+        }
+        .container {
+          max-width: 800px;
+          margin: 20px auto;
+          padding: 20px;
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+          text-align: center;
+        }
+        p {
+          margin-bottom: 15px;
+        }
+        .question {
+          margin-bottom: 30px;
+        }
+        .question h3 {
+          margin-bottom: 10px;
+        }
+        .slider-container {
+          margin-top: 15px;
+          position: relative;
+        }
+        .slider {
+          -webkit-appearance: none;
+          appearance: none;
+          width: calc(100% - 40px); /* Adjusted width */
+          height: 10px;
+          border-radius: 5px;
+          background: #ffc400;
+          outline: none;
+          opacity: 0.7;
+          -webkit-transition: .2s;
+          transition: opacity .2s;
+          position: relative;
+          margin: 10px 0;
+        }
+        .slider:hover {
+          opacity: 1;
+        }
+        .slider::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          background: #000000;
+          cursor: pointer;
+          position: relative;
+          z-index: 2;
+          -webkit-transition: .2s;
+          transition: .2s;
+        }
+        .slider::-moz-range-thumb {
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          background: #000000;
+          cursor: pointer;
+          position: relative;
+          z-index: 2;
+          transition: .2s;
+        }
+        .slider-ticks {
+          position: absolute;
+          width: calc(100% - 40px); /* Adjusted width */
+          display: flex;
+          justify-content: space-between;
+          bottom: -25px; /* Adjusted bottom position */
+          left: 0;
+          padding: 0 20px; /* Added padding */
+        }
+        .slider-ticks span {
+          font-size: 12px;
+          color: #333;
+          position: relative;
+          width: calc((100% - 40px) / 4); /* Adjusted width */
+          text-align: center;
+          margin-top: 5px; /* Adjusted top margin */
+          transform: translateX(-45%); /* Centering the ticks */
+          /* margin-right: 45px; */}
+
+
+        .slider-ticks4 {
+          position: absolute;
+          width: calc(100% - 40px); /* Adjusted width */
+          display: flex;
+          justify-content: space-between;
+          bottom: -25px; /* Adjusted bottom position */
+          left: 0;
+          padding: 0 20px; /* Added padding */
+        }
+        .slider-ticks4 span {
+          font-size: 12px;
+          color: #333;
+          position: relative;
+          width: calc((100% - 40px) / 4); /* Adjusted width */
+          text-align: center;
+          margin-top: 5px; /* Adjusted top margin */
+          transform: translateX(-45%); /* Centering the ticks */
+          /* margin-right: 45px; */
+        }
+        button {
+          padding: 10px 20px;
+          font-size: 16px;
+          border: none;
+          border-radius: 4px;
+          background-color: #000000;
+          color: #fff;
+          cursor: pointer;
+          transition: background-color 0.3s;
+          margin-left: -20px;
+        }
+        button:hover {
+          background-color: #ecad00;
+        }
+        .result {
+          text-align: center;
+          margin-top: 20px;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <h1>Influence Dynamics Assessment</h1>
+        <p>The Influence Dynamics Assessment (IDA) evaluates your behavioral tendencies in interpersonal interactions.</p>
+        
+        <div class="question">
+          <h3>Question 1:</h3>
+          <h4>In a group setting, how do you handle disagreements among members?</h4>
+
+          <p>a) Assertively express your viewpoint and persuade others to agree</p>
+          <p>b) Listen to all perspectives and work towards finding a compromise</p>
+          <p>c) Avoid conflict and maintain neutrality</p>
+          <p>d) Manipulate the situation to ensure your preferred outcome</p>
+          <br> </br>
+          <div class="slider-container">
+            <input type="range" min="1" max="5" value="3" step="1" class="slider" id="question1">
+            <div class="slider-ticks">
+              <span>a</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>b</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>c</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>d</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>e</span>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Repeat the above structure for all questions -->
+    
+        <div class="question">
+          <br> </br>
+          <h3>Question 2:</h3>
+          <h4>Have you ever utilized flattery or compliments to influence someone's decision?</h4>
+          <p>a) Rarely, if ever</p>
+      <p>b) Occasionally, but only as genuine appreciation</p>
+      <p>c) Sometimes, strategically to gain favor</p>
+      <p>d) Frequently, as a deliberate tactic to manipulate</p>
+          
+          <div class="slider-container">
+            <input type="range" min="1" max="4" value="3" step="1" class="slider" id="question20">
+            <div class="slider-ticks4">
+              <span>a</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>b</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>c</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>d</span>
+              
+            </div>
+          </div>
+        </div>
+        <div class="question">
+          <br></br>
+          <h3>Question 3:</h3>
+          <h4>How comfortable are you with withholding information to maintain an advantage in a negotiation?</h4>
+          <p>a) Extremely uncomfortable, I prefer transparency</p>
+          <p>b) Somewhat uncomfortable, but I recognize its utility</p>
+          <p>c) Neutral, I adapt to the situation as needed</p>
+          <p>d) Somewhat comfortable, if it serves my interests</p>
+          <p>e) Very comfortable, I see it as a strategic necessity</p>
+          <div class="slider-container">
+            <input type="range" min="1" max="5" value="3" step="1" class="slider" id="question3">
+            <div class="slider-ticks">
+              <span>a</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>b</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>c</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>d</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>e</span>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="question">
+          <br></br>
+          <h3>Question 4:</h3>
+          <h4>When faced with a challenging task, how do you motivate others to contribute?</h4>
+          <p>a) Lead by example, demonstrating dedication and hard work</p>
+          <p>b) Offer rewards or incentives for successful completion</p>
+          <p>c) Appeal to their sense of duty or obligation</p>
+          <p>d) Manipulate their emotions to evoke guilt or obligation</p>
+          <div class="slider-container">
+            <input type="range" min="1" max="4" value="2" step="1" class="slider" id="question4">
+            <div class="slider-ticks4">
+              <span>a</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>b</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>c</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>d</span>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Question 5 -->
+        <div class="question">
+          <br></br>
+          <h3>Question 5:</h3>
+          <h4>Do you believe it's important to maintain a degree of unpredictability in your interactions with others?</h4>
+          <p>a) No, consistency and reliability are key</p>
+          <p>b) Occasionally, to keep things interesting</p>
+          <p>c) Yes, it keeps others on their toes and adds intrigue</p>
+          <p>d) Absolutely, unpredictability is a powerful tool for manipulation</p>
+          <div class="slider-container">
+            <input type="range" min="1" max="4" value="2" step="1" class="slider" id="question5">
+            <div class="slider-ticks">
+              <span>a</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>b</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>c</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>d</span>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Question 6 -->
+        <div class="question">
+          <br></br>
+          <h3>Question 6:</h3>
+          <h4>In a negotiation, how do you handle concessions?</h4>
+          <p>a) Make concessions only if absolutely necessary</p>
+          <p>b) Use concessions strategically to build rapport and trust</p>
+          <p>c) Offer concessions readily to maintain harmony</p>
+          <p>d) Manipulate the situation to extract maximum concessions from the other party</p>
+          <div class="slider-container">
+            <input type="range" min="1" max="4" value="2" step="1" class="slider" id="question6">
+            <div class="slider-ticks">
+              <span>a</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>b</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>c</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>d</span>
+            </div>
+          </div>
+        </div>
+    
+
+        <div class="question">
+          <br></br>
+          <h3>Question 7:</h3>
+          <h4>Have you ever used silence as a tactic to manipulate a situation?</h4>
+          <p>a) No, silence is not a tool I employ</p>
+          <p>b) Rarely, if ever</p>
+          <p>c) Occasionally, to gauge reactions or exert control</p>
+          <p>d) Frequently, to unsettle others or assert dominance</p>
+          <div class="slider-container">
+            <input type="range" min="1" max="4" value="2" step="1" class="slider" id="question7">
+            <div class="slider-ticks">
+              <span>a</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>b</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>c</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>d</span>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Question 8 -->
+        <div class="question">
+          <br></br>
+          <h3>Question 8:</h3>
+          <h4>When faced with criticism, how do you typically respond?</h4>
+          <p>a) Accept it gracefully and strive for self-improvement</p>
+          <p>b) Defend yourself and deflect blame onto others</p>
+          <p>c) Manipulate the situation to discredit the critic or shift focus</p>
+          <p>d) Ignore the criticism altogether and continue forward</p>
+          <div class="slider-container">
+            <input type="range" min="1" max="4" value="2" step="1" class="slider" id="question8">
+            <div class="slider-ticks">
+              <span>a</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>b</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>c</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>d</span>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Question 9 -->
+        <div class="question">
+          <br></br>
+          <h3>Question 9:</h3>
+          <h4>How do you approach building rapport with new acquaintances?</h4>
+          <p>a) Genuine interest and empathy towards their experiences and perspectives</p>
+          <p>b) Strategic flattery or mirroring to establish common ground</p>
+          <p>c) Manipulation of their emotions or vulnerabilities to gain trust</p>
+          <p>d) Focus solely on showcasing your own achievements and qualities</p>
+          <div class="slider-container">
+            <input type="range" min="1" max="4" value="2" step="1" class="slider" id="question9">
+            <div class="slider-ticks">
+              <span>a</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>b</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>c</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>d</span>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Question 10 -->
+        <div class="question">
+          <br></br>
+          <h3>Question 10:</h3>
+          <h4>Do you believe it's acceptable to exploit loopholes or gray areas in rules or agreements?</h4>
+          <p>a) No, integrity and honesty are paramount</p>
+          <p>b) Only if doing so benefits all parties involved</p>
+          <p>c) Yes, if it serves my interests without causing harm</p>
+          <p>d) Absolutely, rules are meant to be manipulated for personal gain</p>
+          <div class="slider-container">
+            <input type="range" min="1" max="4" value="2" step="1" class="slider" id="question10">
+            <div class="slider-ticks">
+              <span>a</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>b</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>c</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>d</span>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Question 11 -->
+        <div class="question">
+          <br></br>
+          <h3>Question 11:</h3>
+          <h4>How important is it for you to take charge in group settings?</h4>
+          <p>a) Not important at all</p>
+          <p>b) Somewhat important</p>
+          <p>c) Moderately important</p>
+          <p>d) Quite important</p>
+          <p>e) Extremely important</p>
+          <div class="slider-container">
+            <input type="range" min="1" max="5" value="3" step="1" class="slider" id="question11">
+            <div class="slider-ticks">
+              <span>a</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>b</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>c</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>d</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>e</span>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Question 12 -->
+        <div class="question">
+          <br></br>
+          <h3>Question 12:</h3>
+          <h4>Have you ever found yourself influencing others' opinions?</h4>
+          <p>a) Rarely, if ever</p>
+          <p>b) Occasionally, but only unintentionally</p>
+          <p>c) Sometimes, intentionally or unintentionally</p>
+          <p>d) Frequently, intentionally or unintentionally</p>
+          <div class="slider-container">
+            <input type="range" min="1" max="4" value="2" step="1" class="slider" id="question12">
+            <div class="slider-ticks">
+              <span>a</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>b</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>c</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>d</span>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Question 13 -->
+        <div class="question">
+          <br></br>
+          <h3>Question 13:</h3>
+          <h4>How comfortable are you with presenting information that may sway others' opinions?</h4>
+          <p>a) Very uncomfortable</p>
+          <p>b) Somewhat uncomfortable</p>
+          <p>c) Neutral</p>
+          <p>d) Somewhat comfortable</p>
+          <p>e) Very comfortable</p>
+          <div class="slider-container">
+            <input type="range" min="1" max="5" value="3" step="1" class="slider" id="question13">
+            <div class="slider-ticks">
+              <span>a</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>b</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>c</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>d</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>e</span>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="question">
+          <br></br>
+          <h3>Question 14:</h3>
+          <h4>What trait do you believe is most important for success?</h4>
+          <p>a) Kindness</p>
+          <p>b) Assertiveness</p>
+          <p>c) Intelligence</p>
+          <p>d) Charisma</p>
+          <p>e) Adaptability</p>
+          <div class="slider-container">
+            <input type="range" min="1" max="5" value="3" step="1" class="slider" id="question14">
+            <div class="slider-ticks">
+              <span>a</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>b</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>c</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>d</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>e</span>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Question 15 -->
+        <div class="question">
+          <br></br>
+          <h3>Question 15:</h3>
+          <h4>When leading a team, do you prefer members who:</h4>
+          <p>a) Follow your instructions without question</p>
+          <p>b) Challenge your ideas to stimulate discussion</p>
+          <p>c) A mix of both</p>
+          <p>d) Have no preference</p>
+          <p>e) It depends on the situation</p>
+          <div class="slider-container">
+            <input type="range" min="1" max="5" value="3" step="1" class="slider" id="question15">
+            <div class="slider-ticks">
+              <span>a</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>b</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>c</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>d</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>e</span>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Question 16 -->
+        <div class="question">
+          <br></br>
+          <h3>Question 16:</h3>
+          <h4>Which do you value more:</h4>
+          <p>a) Admiration from others</p>
+          <p>b) Respect from others</p>
+          <p>c) Both equally</p>
+          <p>d) Neither, as long as I achieve my goals</p>
+          <div class="slider-container">
+            <input type="range" min="1" max="4" value="2" step="1" class="slider" id="question16">
+            <div class="slider-ticks">
+              <span>a</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>b</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>c</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>d</span>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Question 17 -->
+        <div class="question">
+          <br></br>
+          <h3>Question 17:</h3>
+          <h4>Have you ever deliberately cultivated an air of mystery about yourself to intrigue others?</h4>
+          <p>a) No, never</p>
+          <p>b) Rarely, if ever</p>
+          <p>c) Occasionally</p>
+          <p>d) Often</p>
+          <p>e) All the time</p>
+          <div class="slider-container">
+            <input type="range" min="1" max="5" value="3" step="1" class="slider" id="question17">
+            <div class="slider-ticks">
+              <span>a</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>b</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>c</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>d</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>e</span>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Question 18 -->
+        <div class="question">
+          <br></br>
+          <h3>Question 18:</h3>
+          <h4>When resolving conflicts, do you:</h4>
+          <p>a) Address them head-on and seek resolution</p>
+          <p>b) Resolve them indirectly, through mediation or negotiation</p>
+          <p>c) Avoid conflict altogether</p>
+          <p>d) Wait for conflicts to resolve themselves</p>
+          <div class="slider-container">
+            <input type="range" min="1" max="4" value="2" step="1" class="slider" id="question18">
+            <div class="slider-ticks">
+              <span>a</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>b</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>c</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>d</span>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Question 19 -->
+        <div class="question">
+          <br></br>
+          <h3>Question 19:</h3>
+          <h4>Do you prefer to:</h4>
+          <p>a) Reveal your talents gradually, surprising others over time</p>
+          <p>b) Showcase your talents from the outset, establishing your capabilities early on</p>
+          <p>c) Adapt your approach based on the situation</p>
+          <p>d) It doesn't matter to me</p>
+          <div class="slider-container">
+            <input type="range" min="1" max="4" value="2" step="1" class="slider" id="question19">
+            <div class="slider-ticks">
+              <span>a</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>b</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>c</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>d</span>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Question 20 -->
+        <div class="question">
+          <br></br>
+          <h3>Question 20:</h3>
+          <h4>Is it important to you to:</h4>
+          <p>a) Allow others to take the spotlight while you work behind the scenes</p>
+          <p>b) Always be in the spotlight, showcasing your contributions openly</p>
+          <p>c) It depends on the circumstances</p>
+          <p>d) I don't consider it a priority</p>
+          <div class="slider-container">
+            <input type="range" min="1" max="4" value="2" step="1" class="slider" id="question20">
+            <div class="slider-ticks">
+              <span>a</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>b</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>c</span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span>d</span>
+            </div>
+          </div>
+        </div>
+        <!-- add more questions -->
+
+        <br> </br>
+    
+        <div class="result">
+          <button id="calculate">Calculate Results</button>
+        </div>
+      </div>
+    
+      <script>
+        const sliders = document.querySelectorAll('.slider');
+        sliders.forEach(slider => {
+          const sliderContainer = slider.parentElement;
+          const valueIndicator = sliderContainer.querySelector('::before');
+          
+          slider.addEventListener('input', () => {
+            const value = slider.value;
+            valueIndicator.textContent = value;
+          });
+        });
+    
+        document.getElementById('calculate').addEventListener('click', function() {
+          // JavaScript code to calculate scores and display results
+          alert('Next');
+        });
+      </script>
+    </body>
+    </html>
+    

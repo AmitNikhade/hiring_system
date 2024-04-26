@@ -1,0 +1,13 @@
+flask
+flask-cors
+gunicorn
+numpy
+requests
+openai==1.10.0
+google-cloud-logging
+langchain_community
+google-cloud-storage
+pypdf
+langchain-text-splitters
+langchain
+pandas

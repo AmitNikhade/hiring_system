@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HR Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+
+    header {
+      background-color: #3498db;
+      color: #ecf0f1;
+      padding: 20px;
+      text-align: center;
+      font-size: 28px;
+    }
+
+    .dashboard-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .candidate-card {
+      width: 30%;
+      margin: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease-in-out;
+      position: relative;
+    }
+
+    .candidate-card:hover {
+      transform: scale(1.05);
+    }
+
+    .candidate-card-header {
+      background-color: #3498db;
+      color: #ecf0f1;
+      padding: 15px;
+      text-align: center;
+      font-size: 20px;
+      position: relative;
+    }
+
+    .candidate-indicator {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      color: #2ecc71;
+    }
+
+    .candidate-info {
+      padding: 20px;
+    }
+
+    .score-panel {
+      background-color: #3498db;
+      color: #ecf0f1;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+
+    .score-icon {
+      margin-right: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ecf0f1;
+      padding: 15px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #3498db;
+      color: #ecf0f1;
+    }
+
+    tr:nth-child(even) {
+      background-color: #ecf0f1;
+    }
+
+    .candidate-photo {
+      width: 100%;
+      height: 150px; /* Set a fixed height for all photos */
+      object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+      border-bottom: 1px solid #ecf0f1; /* Add a border to separate photo and name */
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    HR Dashboard
+  </header>
+
+  <div class="dashboard-container">
+    <div class="candidate-card">
+      <div class="candidate-card-header">
+        <img class="candidate-photo" src="/home/amitn/Documents/hiring_system/flask_app_gcp/templates/index.html" alt="John Doe Photo">
+        John Doe
+        <span class="candidate-indicator"><i class="fas fa-check-circle"></i></span>
+      </div>
+      <div class="candidate-info">
+        <div class="score-panel">
+          <i class="fas fa-star score-icon"></i> Score: 90
+        </div>
+        <p>Description: Highly skilled and experienced candidate with a strong background in programming.</p>
+      </div>
+    </div>
+
+    <div class="candidate-card">
+      <div class="candidate-card-header">
+        <img class="candidate-photo" src="/home/amitn/Documents/hiring_system/flask_app_gcp/images/amey.jpg" alt="Jane Smith Photo">
+        Jane Smith
+        <span class="candidate-indicator"><i class="fas fa-exclamation-circle"></i></span>
+      </div>
+      <div class="candidate-info">
+        <div class="score-panel">
+          <i class="fas fa-star score-icon"></i> Score: 85
+        </div>
+        <p>Description: Excellent communication skills and a proven track record of project management.</p>
+      </div>
+    </div>
+
+    <!-- Add more candidate cards as needed -->
+
+  </div>
+
+</body>
+</html>

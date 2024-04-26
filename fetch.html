@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCS Bucket Data Display</title>
+</head>
+<body>
+
+<h1>GCS Bucket Data Display</h1>
+
+<div id="data-container"></div>
+
+<script>
+    // Replace these variables with your GCP project ID, bucket name, and file name
+    const projectId = ' axonaai';
+    const bucketName = 'axona-hs1';
+    const fileName = 'numbers.txt';
+
+    // Construct the URL to fetch the data from GCS
+    const gcsUrl = `https://storage.googleapis.com/${bucketName}/filtered_dir/${fileName}`;
+
+    // Function to fetch data from GCS and display it
+    function fetchDataAndDisplay() {
+        const xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    const data = xhr.responseText;
+                    displayData(data);
+                } else {
+                    console.error('Failed to fetch data from GCS:', xhr.statusText);
+                }
+            }
+        };
+
+        xhr.open('GET', gcsUrl, true);
+        xhr.send();
+    }
+
+    // Function to display the fetched data
+    function displayData(data) {
+        const dataContainer = document.getElementById('data-container');
+        dataContainer.innerHTML = `<p>Data from GCS:</p><pre>${data}</pre>`;
+    }
+
+    // Fetch data when the page loads
+    fetchDataAndDisplay();
+</script>
+
+</body>
+</html>

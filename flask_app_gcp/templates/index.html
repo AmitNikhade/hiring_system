@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Dashboard</title>
+
+    <!-- Bulma CSS Framework -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 20px;
+        }
+
+        header {
+            background-color: #3498db;
+            padding: 30px 0;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        section {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            color: #e74c3c;
+        }
+
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .profile-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-details {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 class="title is-2">Election</h1>
+        
+    </header>
+
+    <section class="profile-section">
+        <div class="profile-details">
+            <h2 class="title is-4">Profile Information</h2>
+            <ul>
+                <li><strong>Name:</strong>Amit Nikhade</li>
+                <li><strong>Email:</strong> john.doe@example.com</li>
+                <li><strong>Role:</strong> User</li>
+            </ul>
+        </div>
+        <div>
+            <!-- Replace the image path with the actual path to your image on the server -->
+            <img src="amey.jpg" alt="Profile Image" class="profile-image">
+        </div>
+    </section>
+
+    <section>
+        
+        <h2 class="title is-4">Personality and character analysis</h2>
+        
+        <ul>
+            <li>{{ content | safe }}</li>
+        </ul>
+    </section>
+    
+
+   
+
+    <footer>
+        <p>&copy; 2024 Your Company Name</p>
+    </footer>
+</body>
+
+</html>

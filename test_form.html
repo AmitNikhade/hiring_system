@@ -1,0 +1,438 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Job Application Form</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 50px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Additional styles for form components */
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        .form-control {
+            font-size: 16px;
+            padding: 12px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    
+    <form id="myForm">
+        <div class="form-group">
+            <label for="dropdownSelection">Select the job position you're applying for:</label>
+            <select id="dropdownSelection" name="dropdownSelection" class="form-control">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                 Add more job options as needed 
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" class="form-control" required>
+        </div>
+
+        <div class="container">
+            <h2>P&C Test</h2>
+            
+            <br> </br>
+            <b> Instruction: Please do answer questions in one sentence.</b>
+            <br> </br>
+            <hr>
+            <br> </br>
+            <form id="myForm">
+                <h3>Section 1: Introductory Questions</h3>
+                <br>
+                <div class="form-group">
+                    <label for="selfDescription">1.1. How would you describe yourself in three words?</label>
+                    <input type="text" id="selfDescription" name="selfDescription" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="motivation">1.2. What motivated you to apply for this position?</label>
+                    <input type="text" id="motivation" name="motivation" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="challenge">1.3. Share a situation where you had to overcome a significant challenge. How did you handle it?</label>
+                    <textarea id="challenge" name="challenge" class="form-control" required></textarea>
+                </div>
+
+                <br>
+            <hr>
+                <br>
+                <br>
+                <h3>Section 2: Personality Traits</h3>
+                <br>
+                <b>Instruction: Please rate the following statements on a scale of 1 to 5.</b>
+                <br> <br/>
+                <hr>
+                <br> <br/>
+                <div class="form-group">
+                    <label for="teamWork">2.1. I am comfortable working in a team.</label>
+                    <input type="number" id="teamWork" name="teamWork" class="form-control" required min="1" max="5">
+                </div>
+
+                <div class="form-group">
+                    <label for="challenges">2.2. I enjoy taking on new challenges.</label>
+                    <input type="number" id="challenges" name="challenges" class="form-control" required min="1" max="5">
+                </div>
+
+                <div class="form-group">
+                    <label for="detailOriented">2.3. I am detail-oriented.</label>
+                    <input type="number" id="detailOriented" name="detailOriented" class="form-control" required min="1" max="5">
+                </div>
+
+                <div class="form-group">
+                    <label for="stressHandling">2.4. I can handle stress well.</label>
+                    <input type="number" id="stressHandling" name="stressHandling" class="form-control" required min="1" max="5">
+                </div>
+
+                <div class="form-group">
+                    <label for="adaptability">2.5. I am adaptable to change.</label>
+                    <input type="number" id="adaptability" name="adaptability" class="form-control" required min="1" max="5">
+                </div>
+                 <br>
+            <hr>
+                <br>
+                <br>
+
+                <h3>Section 3: Work Ethic and Values</h3>
+                <div class="form-group">
+                    <label for="deadlinePriority">3.1. When facing a tight deadline, I am more likely to:</label>
+                    <select id="deadlinePriority" name="deadlinePriority" class="form-control" required>
+                        <option value="qualityOverSpeed">a) Prioritize quality over speed</option>
+                        <option value="speedOverPerfection">b) Prioritize speed over perfection</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="disagreementsHandling">3.2. How do you handle disagreements with colleagues?</label>
+                    <select id="disagreementsHandling" name="disagreementsHandling" class="form-control" required>
+                        <option value="confrontIssue">a) Confront the issue directly</option>
+                        <option value="seekCompromise">b) Seek compromise and find common ground</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="timeManagement">3.3. Describe your approach to time management and meeting deadlines.</label>
+                    <textarea id="timeManagement" name="timeManagement" class="form-control" required></textarea>
+                </div>
+                 <br>
+            <hr>
+                <br>
+                <br>
+
+                <h3>Section 4: Problem-Solving Skills</h3>
+                <div class="form-group">
+                    <label for="workProblem">4.1. Share an example of a work-related problem you successfully solved. What steps did you take?</label>
+                    <textarea id="workProblem" name="workProblem" class="form-control" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="infoHandling">4.2. How do you approach situations where you don’t have all the information needed to make a decision?</label>
+                    <textarea id="infoHandling" name="infoHandling" class="form-control" required></textarea>
+                </div>
+ <br>
+            <hr>
+                <br>
+                <br>
+
+                <h3>Section 5: Interpersonal Skills</h3>
+                <div class="form-group">
+                    <label for="groupSetting">5.1. In a group setting, I am more likely to:</label>
+                    <select id="groupSetting" name="groupSetting" class="form-control" required>
+                        <option value="leadershipRole">a) Take a leadership role</option>
+                        <option value="teamMemberRole">b) Listen and contribute ideas as a team member</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="rapportBuilding">5.2. How do you build rapport with colleagues and clients?</label>
+                    <textarea id="rapportBuilding" name="rapportBuilding" class="form-control" required></textarea>
+                </div>
+
+ <br>
+            <hr>
+                <br>
+                <br>
+                <h3>Section 6: Communication Skills</h3>
+                 <br>
+                <b>Instruction: Please rate the following statements on a scale of 1 to 5.</b>
+                <br> <br/>
+                <hr>
+                <br> <br/>
+                <div class="form-group">
+                    <label for="writtenCommunication">6.1. Written communication skills:</label>
+                    <input type="number" id="writtenCommunication" name="writtenCommunication" class="form-control" required min="1" max="5">
+                </div>
+
+                <div class="form-group">
+                    <label for="verbalCommunication">6.2. Verbal communication skills:</label>
+                    <input type="number" id="verbalCommunication" name="verbalCommunication" class="form-control" required min="1" max="5">
+                </div>
+ <br>
+            <hr>
+                <br>
+                <br>
+
+                <h3>Section 7: Situational Judgment</h3>
+                <div class="form-group">
+                    <label for="projectMistake">7.1. You discover a mistake in a project that could have serious consequences. What do you do?</label>
+                    <select id="projectMistake" name="projectMistake" class="form-control" required>
+                        <option value="reportToSupervisor">a) Immediately report it to your supervisor</option>
+                        <option value="fixBeforeReporting">b) Try to fix it yourself before reporting</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="criticismHandling">7.2. How do you handle criticism and feedback?</label>
+                    <textarea id="criticismHandling" name="criticismHandling" class="form-control" required></textarea>
+                </div>
+
+ <br>
+            <hr>
+                <br>
+                <br>
+                <h3>Section 8: Additional Information</h3>
+                <div class="form-group">
+                    <label for="fitForPosition">8.1. Are there any specific achievements or experiences that you feel make you a strong fit for this position?</label>
+                    <textarea id="fitForPosition" name="fitForPosition" class="form-control"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="additionalInfo">8.2. Is there anything else you would like us to know about you?</label>
+                    <textarea id="additionalInfo" name="additionalInfo" class="form-control"></textarea>
+                </div>
+ <br>
+            <hr>
+                <br>
+                <br>
+
+                <h3>Section 9: Describe Yourself</h3>
+                <div class="form-group">
+                    <label for="selfDescriptionParagraph">9.1. How would you describe yourself in a paragraph?</label>
+                    <textarea id="selfDescriptionParagraph" name="selfDescriptionParagraph" class="form-control" required></textarea>
+                </div>
+ <br>
+            <hr>
+                <br>
+                <br>
+
+                <h3>Section 10: Skills Assessment</h3>
+                 <br>
+                <b>Instruction: Please rate the following statements on a scale of 1 to 5.</b>
+                <br> <br/>
+                <hr>
+                <br> <br/>
+                <div class="form-group">
+                    <label for="projectManagement">10.1. Rate your proficiency (1 = novice, 5 = expert) in Project Management:</label>
+                    <input type="number" id="projectManagement" name="projectManagement" class="form-control" required min="1" max="5">
+                </div>
+
+                <div class="form-group">
+                    <label for="dataAnalysis">10.2. Rate your proficiency (1 = novice, 5 = expert) in Data Analysis:</label>
+                    <input type="number" id="dataAnalysis" name="dataAnalysis" class="form-control" required min="1" max="5">
+                </div>
+
+                <div class="form-group">
+                    <label for="writtenCommunicationSkill">10.3. Rate your proficiency (1 = novice, 5 = expert) in Written Communication:</label>
+                    <input type="number" id="writtenCommunicationSkill" name="writtenCommunicationSkill" class="form-control" required min="1" max="5">
+                </div>
+
+                <div class="form-group">
+                    <label for="technicalSkills">10.4. Rate your proficiency (1 = novice, 5 = expert) in Technical Skills relevant to the position:</label>
+                    <input type="number" id="technicalSkills" name="technicalSkills" class="form-control" required min="1" max="5">
+                </div>
+
+ <br>
+            <hr>
+                <br>
+                <br>
+                <h3>Section 11: Behavioral Questions</h3>
+                <div class="form-group">
+                    <label for="problemSolvingSituation">11.1. Describe a challenging situation at work where you demonstrated problem-solving skills. What was the outcome?</label>
+                    <textarea id="problemSolvingSituation" name="problemSolvingSituation" class="form-control" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="tightDeadlinesHandling">11.2. How do you handle tight deadlines and high-pressure situations?</label>
+                    <textarea id="tightDeadlinesHandling" name="tightDeadlinesHandling" class="form-control" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="teamCollaboration">11.3. Provide an example of a successful collaboration with a team. What role did you play?</label>
+                    <textarea id="teamCollaboration" name="teamCollaboration" class="form-control" required></textarea>
+                </div>
+
+ <br>
+            <hr>
+                <br>
+                <br>
+                <h3>Section 12: Self-Reflection</h3>
+                <div class="form-group">
+                    <label for="greatestAchievement">12.1. What do you consider your greatest professional achievement, and why?</label>
+                    <textarea id="greatestAchievement" name="greatestAchievement" class="form-control" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="areaToImprove">12.2. Identify a skill or area you would like to improve and what steps you are taking to achieve this.</label>
+                    <textarea id="areaToImprove" name="areaToImprove" class="form-control" required></textarea>
+                </div>
+ <br>
+            <hr>
+                <br>
+                <br>
+
+                <h3>Section 13: Conclusion</h3>
+                <div class="form-group">
+                    <label for="expectationsFromRole">13.1. What are your expectations from this role and our company?</label>
+                    <textarea id="expectationsFromRole" name="expectationsFromRole" class="form-control" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="whyHireYou">13.2. Why should we hire you?</label>
+                    <textarea id="whyHireYou" name="whyHireYou" class="form-control" required></textarea>
+                </div>
+
+                <button type="submit">Submit response</button>
+            </form>
+        </div>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    function generateRandomId() {
+        // Generate a random ID using current timestamp
+        return 'id_' + Date.now().toString(36) + Math.random().toString(36).substr(2, 5);
+    }
+
+    function populateDropdown() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const jt = urlParams.get('id');
+        // Populate the dropdown with options from the list
+        const dropdownOptions = [String(jt)];
+        const dropdownSelect = document.getElementById('dropdownSelection');
+
+        dropdownOptions.forEach(option => {
+            const optionElement = document.createElement('option');
+            optionElement.value = option;
+            optionElement.text = option;
+            dropdownSelect.add(optionElement);
+        });
+    }
+
+    function submitForm() {
+        // Get the values from the form
+        const fullName = document.getElementById('fullName').value;
+        const dropdownValue = document.getElementById('dropdownSelection').value;
+
+        // Get form data
+        const formData = new FormData(document.getElementById('myForm'));
+        const urlEncodedData = new URLSearchParams(formData).toString();
+        
+        // Generate a random ID
+        const randomId = generateRandomId();
+
+        // Log the generated ID, full name, and dropdown value
+        console.log('Generated ID:', randomId);
+        console.log('Full Name:', fullName);
+        console.log('Dropdown Value:', dropdownValue);
+
+        // Store the random ID in local storage
+        localStorage.setItem('generatedId', randomId);
+
+        // Make a POST request using Fetch API
+        fetch('https://ses3-atjv7x75va-uc.a.run.app/upload', {
+            mode: "cors",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: 'POST',
+            body: JSON.stringify({
+                id: randomId,
+                test: urlEncodedData,
+                dropdownValue: dropdownValue,
+                name: fullName,
+            }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            console.log(formData);
+            console.log(urlEncodedData);
+            console.log(typeof urlEncodedData);
+            console.log(JSON.stringify({test: urlEncodedData}));
+
+            // Redirect to the next page with query parameters
+            window.location.href = `https://axona.ai/resumes/?id=${randomId}&jt=${dropdownValue}`;
+            // You can handle the response here
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            // Handle errors here
+        });
+    }
+
+    // Call the function to populate the dropdown
+    populateDropdown();
+</script>
+</body>
+</html>
